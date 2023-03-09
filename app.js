@@ -3,13 +3,13 @@ const app = express();
 const morgan = require('morgan');
 const mongoose = require('mongoose');
 const blogRoutes = require("./routes/blogRoutes");
-const hostname= '0.0.0.0';
+
 app.set('view engine', 'ejs');
 
 dbURI = "mongodb+srv://netninja:test1234@cluster0.zfenadv.mongodb.net/note-tuts?retryWrites=true&w=majority"
 // dbURI = "mongodb://localhost:27017/note-tuts";
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
-    .then((result) => { app.listen(3001,hostname) })
+    .then((result) => { app.listen(3001) })
     .catch((err) => console.log("error"));
 app.use(morgan('dev'));
 
