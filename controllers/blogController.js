@@ -40,10 +40,28 @@ const blog_delete = (req, res) => {
         });
 }
 
+const blog_update_get = async (req, res) => {
+    const id = req.params.id;
+    const blog = await Blog.findById(id);
+    res.render('update', { blog: blog, title: 'Update blog' });
+}
+
+const blog_update_put = async (req, res) => {
+    console.log("inside the put request");
+    const id = req.params.id;
+    const { title, snippet, body } = req.body;
+    const newBlog = { title, snippet, body };
+    console.log(req.body);
+    await Blog.findByIdAndUpdate(id, newBlog);
+    res.redirect(`/blogs/${id}`)
+}
+
 module.exports = {
     blog_index,
     blog_details,
     blog_create_get,
     blog_create_post,
-    blog_delete
+    blog_delete,
+    blog_update_get,
+    blog_update_put,
 };

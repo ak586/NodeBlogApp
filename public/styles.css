@@ -84,19 +84,11 @@ h3 {
 }
 
 /* details styles */
-.details {
-    position: relative;
 
+
+.delete{
+    margin-right:100px;
 }
-
-.delete {
-    position: absolute;
-    top: 0;
-    right: 0;
-    border-radius: 50%;
-    padding: 8px;
-}
-
 .delete:hover {
     cursor: pointer;
     box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
@@ -134,3 +126,20 @@ textarea {
     font-size: 1.2em;
     cursor: pointer;
 }
+
+.btn{
+    margin:100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn a{
+width: 100px;
+text-align: center;
+border-radius: 5px;
+padding:1rem;
+background-color: rgba(120, 13, 156, 0.915);
+color:white;
+
+}
+
